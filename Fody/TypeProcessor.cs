@@ -163,10 +163,6 @@ public class TypeProcessor
             {
                 continue;
             }
-            if (field.CustomAttributes.ContainsSkipWeaving())
-            {
-                continue;
-            }
             if (field.IsStatic)
             {
                 continue;

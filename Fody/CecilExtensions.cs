@@ -9,19 +9,14 @@ using Mono.Collections.Generic;
 
 public static class CecilExtensions
 {
-    public static bool ContainsSkipWeaving(this IEnumerable<CustomAttribute> attributes)
-    {
-        return attributes.Any(x => x.AttributeType.FullName == "Janitor.SkipWeaving");
-    }
-
     public static bool ContainsJanitorAttribute(this IEnumerable<CustomAttribute> attributes)
     {
-        return attributes.Any(x => x.AttributeType.FullName == typeof(JanitorAttribute).FullName);
+        return attributes.Any(x => x.AttributeType.FullName == "Janitor.JanitorAttribute");
     }
 
     public static void RemoveJanitorAttribute(this Collection<CustomAttribute> attributes)
     {
-        var attribute = attributes.FirstOrDefault(x => x.AttributeType.FullName == typeof(JanitorAttribute).FullName);
+        var attribute = attributes.FirstOrDefault(x => x.AttributeType.FullName == "Janitor.JanitorAttribute");
         if (attribute != null)
         {
             attributes.Remove(attribute);
