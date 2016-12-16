@@ -7,10 +7,10 @@ public partial class ModuleWeaver
     {
         foreach (var typeDefinition in ModuleDefinition.GetTypes())
         {
-            typeDefinition.CustomAttributes.RemoveSkipWeaving();
+            typeDefinition.CustomAttributes.RemoveJanitorAttribute();
             foreach (var field in typeDefinition.Fields)
             {
-                field.CustomAttributes.RemoveSkipWeaving();
+                field.CustomAttributes.RemoveJanitorAttribute();
             }
         }
 

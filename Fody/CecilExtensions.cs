@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Anotar.Custom;
+using Janitor;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Mono.Collections.Generic;
@@ -15,12 +16,12 @@ public static class CecilExtensions
 
     public static bool ContainsJanitorAttribute(this IEnumerable<CustomAttribute> attributes)
     {
-        return attributes.Any(x => x.AttributeType.FullName == typeof(Janitor.JanitorAttribute).FullName);
+        return attributes.Any(x => x.AttributeType.FullName == typeof(JanitorAttribute).FullName);
     }
 
-    public static void RemoveSkipWeaving(this Collection<CustomAttribute> attributes)
+    public static void RemoveJanitorAttribute(this Collection<CustomAttribute> attributes)
     {
-        var attribute = attributes.FirstOrDefault(x => x.AttributeType.FullName == "Janitor.SkipWeaving");
+        var attribute = attributes.FirstOrDefault(x => x.AttributeType.FullName == typeof(JanitorAttribute).FullName);
         if (attribute != null)
         {
             attributes.Remove(attribute);
