@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using Janitor;
 
+[Janitor]
 public class WithReadOnly:IDisposable
 {
     readonly MemoryStream stream;

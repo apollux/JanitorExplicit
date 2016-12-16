@@ -54,7 +54,6 @@
     <Compile Include="WhereFieldIsDisposableClassArray.cs" />
     <Compile Include="WhereFieldIsIDisposable.cs" />
     <Compile Include="WhereFieldIsIDisposableArray.cs" />
-    <Compile Include="WithAttributeToBeRemoved.cs" />
     <Compile Include="WithExplicitDisposeMethod.cs" />
     <Compile Include="WithManaged.cs" />
     <Compile Include="WithManagedAndUnmanaged.cs" />

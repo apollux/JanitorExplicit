@@ -1,5 +1,7 @@
 ﻿using System;
+using Janitor;
 
+[Janitor]
 public class WithExplicitDisposeMethod : IDisposable
 {
     public Explicit Child = new Explicit();
@@ -8,6 +10,7 @@ public class WithExplicitDisposeMethod : IDisposable
     {
     }
 
+    [Janitor]
     public class Explicit : IDisposable
     {
         void IDisposable.Dispose()

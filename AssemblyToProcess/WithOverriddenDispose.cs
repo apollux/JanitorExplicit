@@ -1,5 +1,7 @@
 ﻿using System;
+using Janitor;
 
+[Janitor]
 public class WithOverriddenDisposeManaged : WithProtectedDisposeManaged
 {
     protected override void DisposeManaged()
@@ -9,6 +11,7 @@ public class WithOverriddenDisposeManaged : WithProtectedDisposeManaged
     }
 }
 
+[Janitor]
 public class WithOverriddenDisposeUnmanaged : WithProtectedDisposeUnmanaged
 {
     protected override void DisposeUnmanaged()
@@ -18,6 +21,7 @@ public class WithOverriddenDisposeUnmanaged : WithProtectedDisposeUnmanaged
     }
 }
 
+[Janitor]
 public class WithOverriddenDisposeManagedAndDisposeUnmanaged : WithProtectedDisposeManagedAndDisposeUnmanaged
 {
     protected override void DisposeManaged()
@@ -33,6 +37,7 @@ public class WithOverriddenDisposeManagedAndDisposeUnmanaged : WithProtectedDisp
     }
 }
 
+[Janitor]
 public class WithAbstractBaseClass : AbstractWithProtectedDisposeManaged
 {
     protected override void DisposeManaged()
@@ -42,6 +47,7 @@ public class WithAbstractBaseClass : AbstractWithProtectedDisposeManaged
     }
 }
 
+[Janitor]
 public class WithAbstractDisposeManaged : AbstractWithAbstractDisposeManaged
 {
     protected override void DisposeManaged()

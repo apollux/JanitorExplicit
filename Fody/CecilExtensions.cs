@@ -13,6 +13,11 @@ public static class CecilExtensions
         return attributes.Any(x => x.AttributeType.FullName == "Janitor.SkipWeaving");
     }
 
+    public static bool ContainsJanitorAttribute(this IEnumerable<CustomAttribute> attributes)
+    {
+        return attributes.Any(x => x.AttributeType.FullName == typeof(Janitor.JanitorAttribute).FullName);
+    }
+
     public static void RemoveSkipWeaving(this Collection<CustomAttribute> attributes)
     {
         var attribute = attributes.FirstOrDefault(x => x.AttributeType.FullName == "Janitor.SkipWeaving");

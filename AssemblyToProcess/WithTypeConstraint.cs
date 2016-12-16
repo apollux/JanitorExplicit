@@ -1,5 +1,7 @@
 ﻿using System;
+using Janitor;
 
+[Janitor]
 public class WithTypeConstraint<T> : IDisposable
     where T : IComparable
 {

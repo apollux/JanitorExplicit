@@ -1,7 +1,10 @@
 ﻿using System;
 using System.IO;
+using Janitor;
+
 // ReSharper disable UnusedMember.Local
 
+[Janitor]
 public class Simple:IDisposable
 {
     MemoryStream stream;

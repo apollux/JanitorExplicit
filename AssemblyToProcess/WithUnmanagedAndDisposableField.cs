@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+using Janitor;
 
+[Janitor]
 public class WithUnmanagedAndDisposableField : IDisposable
 {
     public MemoryStream DisposableField;

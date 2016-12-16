@@ -1,5 +1,7 @@
 ﻿using System;
+using Janitor;
 
+[Janitor]
 public class WithUnmanaged:IDisposable
 {
     public void Dispose()

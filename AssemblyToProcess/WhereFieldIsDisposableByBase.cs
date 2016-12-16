@@ -1,6 +1,8 @@
 ﻿using System;
 using DisposeInBase;
+using Janitor;
 
+[Janitor]
 public class WhereFieldIsDisposableByBase:IDisposable
 {
     public Child Child;

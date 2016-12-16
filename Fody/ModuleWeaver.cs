@@ -30,7 +30,7 @@ public partial class ModuleWeaver
             .Where(x =>
                 x.IsClass() &&
                 !x.IsGeneratedCode() &&
-                !x.CustomAttributes.ContainsSkipWeaving()))
+                x.CustomAttributes.ContainsJanitorAttribute()))
         {
             var disposeMethods = type.Methods
                                      .Where(x => !x.IsStatic && (x.Name == "Dispose" || x.Name == "System.IDisposable.Dispose"))

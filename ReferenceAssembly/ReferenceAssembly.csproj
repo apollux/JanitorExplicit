@@ -65,7 +65,7 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="SkipWeaving.cs" />
+    <Compile Include="JanitorAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
