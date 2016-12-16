@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata minClientVersion="2.8">
-    <id>Janitor.Fody</id>
+    <id>JanitorExplicit.Fody</id>
     <version>$version$</version>
-    <title>Janitor.Fody</title>
-    <authors>Simon Cropp</authors>
-    <owners>Simon Cropp</owners>
+    <title>JanitorExplicit.Fody</title>
+    <authors>Simon Cropp, Andre Kwakernaak</authors>
+    <owners>Andre Kwakernaak</owners>
     <developmentDependency>true</developmentDependency>
     <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
-    <projectUrl>http://github.com/Fody/Janitor</projectUrl>
+    <projectUrl>https://github.com/apollux/JanitorExplicit</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://raw.github.com/Fody/Janitor/master/Icons/package_icon.png</iconUrl>
-    <description>Fody add-in that helps with implementing IDisposable.</description>
+    <description>Fork of Janitor.Fody that wants to be more explicit.</description>
     <language>en-AU</language>
     <tags>IDisposable, Dispose, ILWeaving, Fody, Cecil</tags>
     <dependencies>
