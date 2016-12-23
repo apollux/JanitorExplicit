@@ -1,3 +1,8 @@
+This is a fork of the awesome FodyJanitor. It tries to be a bit more explicit by checking the presence of a Janitor attribute on a class before weaving the Dispose method.
+
+https://github.com/Fody/Janitor
+
+
 ## This is an add-in for [Fody](https://github.com/Fody/Fody/) 
 
 ![Icon](https://raw.github.com/Fody/Janitor/master/Icons/package_icon.png)
@@ -8,16 +13,9 @@ Simplifies the implementation of [IDisposable](http://msdn.microsoft.com/en-us/l
 [Introduction to Fody](http://github.com/Fody/Fody/wiki/SampleUsage)
 
 
-## The nuget package  [![NuGet Status](http://img.shields.io/nuget/v/Janitor.Fody.svg?style=flat)](https://www.nuget.org/packages/Janitor.Fody/)
-
-https://nuget.org/packages/Janitor.Fody/
-
-    PM> Install-Package Janitor.Fody
-
-
 ## What it does
 
- * Looks for all classes with a `Dispose` method.
+ * Looks for all classes with a [Janitor] attribute.
  * Finds all instance fields that are `IDisposable` and cleans them up.
  * Adds a `volatile int disposeSignaled` field that is `Interlocked.Exchange`ed inside `Dispose`.
  * Uses `disposeSignaled` to add an exit clause to `Dispose`.
@@ -34,6 +32,7 @@ All instance fields will be cleaned up in the `Dispose` method.
 
 #### Your Code
 
+	[Janitor]
     public class Sample : IDisposable
     {
         MemoryStream stream;
@@ -106,6 +105,7 @@ In some cases you may want to have custom code that cleans up your managed resou
 
 #### Your Code
 
+	[Janitor]
     public class Sample : IDisposable
     {
         MemoryStream stream;
@@ -191,6 +191,7 @@ In some cases you may want to have custom code that cleans up your unmanaged res
 
 #### Your Code
 
+	[Janitor]
     public class Sample : IDisposable
     {
         IntPtr handle;
@@ -283,6 +284,7 @@ Combining the above two scenarios will give you the following
 
 #### Your code
 
+	[Janitor]
     public class Sample : IDisposable
     {
         MemoryStream stream;
