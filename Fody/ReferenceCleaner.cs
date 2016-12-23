@@ -8,10 +8,6 @@ public partial class ModuleWeaver
         foreach (var typeDefinition in ModuleDefinition.GetTypes())
         {
             typeDefinition.CustomAttributes.RemoveJanitorAttribute();
-            foreach (var field in typeDefinition.Fields)
-            {
-                field.CustomAttributes.RemoveJanitorAttribute();
-            }
         }
 
         var referenceToRemove = ModuleDefinition.AssemblyReferences.FirstOrDefault(x => x.Name == "Janitor");

@@ -295,6 +295,12 @@ public class ModuleWeaverTests
         Assert.That(writer.ToString(), Is.EqualTo(expectedValue));
     }
 
+    [Test]
+    public void WhereJanitorAttributeAndNonEmptyDisposeMethod()
+    {
+        Assert.Throws<Exception>(GetInstance("WhereJanitorAttributeAndNonEmptyDisposeMethod"));
+    }
+
     bool GetIsDisposed(dynamic instance)
     {
         Type type = instance.GetType();
